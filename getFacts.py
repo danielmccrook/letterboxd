@@ -2,7 +2,8 @@
 import requests
 from bs4 import BeautifulSoup
 import getWiki
-#import getReviews
+import getReviewPage
+import pickle
 
 def getFacts(film_url):
 
@@ -15,15 +16,27 @@ def getFacts(film_url):
 
     plot = getWiki.getWiki(title.get_text(),year.get_text())
     
-    #reviews = getReviews.getReviews(film_url)
+    # how many pages of reviews
+    reviews = getReviewPage.getReviews(film_url,3)
 
     movie =	{
         "title":    title.get_text(),
         "year":     year.get_text(),
         "director": director.get_text(),
-        "plot":     plot
-        #"reviews":  reviews
+        "plot":     plot,
+        "reviews":  reviews
     }
+
+    pickle_out = open(movie["title"] + '.pickle',"wb")
+    pickle.dump(movie, pickle_out)
+    pickle_out.close()
+    
+    # with open(movie["title"]+'.pickle', 'wb') as fp:
+    #     pickle.dump(movie["title"], fp)
+    #     pickle.dump(movie["year"], fp)
+    #     pickle.dump(movie["director"], fp)
+    #     pickle.dump(movie["plot"], fp)
+    #     pickle.dump(movie["reviews"], fp)
 
     return movie
 
