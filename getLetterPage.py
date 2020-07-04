@@ -22,6 +22,8 @@ def getLetterPage(list_url):
 
         film_dict[ temp["title"] ] = temp
 
+        print(temp["title"])
+
         #print("Found: " + temp["title"])
 
     

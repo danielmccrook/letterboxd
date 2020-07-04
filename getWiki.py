@@ -12,7 +12,7 @@ def getWiki(title,year):
 
         try:
             wiki_page = wikipedia.page(title)
-            print("found by title: " + title)
+            #print("found by title: " + title)
         except wikipedia.exceptions.PageError:
             #print("unclear movie result")
 
@@ -27,7 +27,7 @@ def getWiki(title,year):
 
             if option2 == option3:
                 wiki_page = wikipedia.page(option2)
-                print("found by comparison: " + title)
+                #print("found by comparison: " + title)
 
     return wiki_page.section("Plot")
     

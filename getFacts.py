@@ -2,7 +2,7 @@
 import requests
 from bs4 import BeautifulSoup
 import getWiki
-
+#import getReviews
 
 def getFacts(film_url):
 
@@ -14,12 +14,15 @@ def getFacts(film_url):
     director = year.parent.find_next_sibling("a")
 
     plot = getWiki.getWiki(title.get_text(),year.get_text())
+    
+    #reviews = getReviews.getReviews(film_url)
 
     movie =	{
         "title":    title.get_text(),
         "year":     year.get_text(),
         "director": director.get_text(),
         "plot":     plot
+        #"reviews":  reviews
     }
 
     return movie
