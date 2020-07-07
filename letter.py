@@ -14,7 +14,9 @@ import getLetterPage
 
 #soup = BeautifulSoup(letterboxdPage.text,'html.parser')
 
-list_url = 'https://letterboxd.com/crew/list/the-2010s-most-popular-films/'
+# list_url = 'https://letterboxd.com/crew/list/the-2010s-most-popular-films/'
+
+list_url = 'https://letterboxd.com/jaywill/list/my-highest-rated-of-every-year/'
 
 getLetterPage.getLetterPage(list_url)
 
