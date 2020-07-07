@@ -3,8 +3,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
-
-driver = webdriver.Chrome()
+driver = webdriver.Chrome('/Users/daniel/dev/letterboxd/chromedriver')
 
 # Check if given XPATH exists
 def check_fail(x_path):

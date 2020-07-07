@@ -14,7 +14,6 @@ def getLetterPage(list_url):
     for film in all:
         title = film.contents[1]
         film_ext = title['data-film-slug']
-        #t2 = title['data-target-link']
 
         film_url = "https://letterboxd.com" + film_ext
 
@@ -23,10 +22,3 @@ def getLetterPage(list_url):
         film_dict[ temp["title"] ] = temp
 
         print(temp["title"])
-
-        #print("Found: " + temp["title"])
-
-    
-
-
-#getLetterPage('https://letterboxd.com/crew/list/the-2010s-most-popular-films/')

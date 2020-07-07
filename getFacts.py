@@ -39,6 +39,3 @@ def getFacts(film_url):
     #     pickle.dump(movie["reviews"], fp)
 
     return movie
-
-
-
